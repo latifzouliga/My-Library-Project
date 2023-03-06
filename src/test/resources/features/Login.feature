@@ -11,7 +11,7 @@ Feature: Login function
     And Librarian clicks Sign in button
     Then Librarian should see Library title
 
-  @librarian @wip
+  @librarian
   Scenario Outline: login with invalid credentials
     Given Librarian on the login page
     When Librarian enters invalid "<email>" address
@@ -27,4 +27,41 @@ Feature: Login function
       | librarianUsername1 | empty             |
       | empty              | librarianPassword |
       | empty              | empty             |
+
+
+  @student
+  Scenario: login with valid credentials
+    Given student on the login page
+    When student enters valid email address
+    And student enters valid password
+    And student clicks Sign in button
+    Then student should see Library title
+
+  @student
+  Scenario Outline: login with invalid credentials
+    Given student on the login page
+    When student enters invalid "<email>" address
+    And student enters invalid "<password>"
+    And student clicks Sign in button
+    Then student should not be able to login
+
+    Examples:
+      | email            | password        |
+      | studentUsername1 | wrong           |
+      | wrong            | studentPassword |
+      | EmailWrong       | PasswordWrong   |
+      | studentUsername1 | empty           |
+      | empty            | studentPassword |
+      | empty            | empty           |
+
+
+
+
+
+
+
+
+
+
+
 
