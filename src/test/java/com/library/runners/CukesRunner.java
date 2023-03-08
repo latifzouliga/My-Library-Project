@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"},  // define report type
         features = "src/test/resources/features",   //
         glue = "com/library/step_defs",
-        tags = "",
+        tags = "@wip",
         dryRun = false, // generate snippets
         publish = true // generate a public link for reports
 )

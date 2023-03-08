@@ -4,6 +4,7 @@ import com.library.pages.BooksPage;
 import com.library.pages.DashBoardPage;
 import com.library.pages.LoginPage;
 import com.library.pages.UsersPage;
+import com.library.utilities.BrowserUtils;
 import com.library.utilities.ConfigurationReader;
 import com.library.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -92,8 +93,9 @@ public class LibrarianNavigatesToCorrectPage_stepDefs {
     @When("Librarian clicks log out")
     public void librarian_clicks_log_out() {
 
-        dashBoardPage.btn_accountName.click();
+        dashBoardPage.btn_accountHolderName.click();
         dashBoardPage.btn_logout.click();
+        BrowserUtils.waitFor(2);
     }
 
     @Then("Librarian should be in the login page")

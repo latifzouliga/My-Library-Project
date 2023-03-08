@@ -4,6 +4,9 @@ import com.library.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class UsersPage extends BasePage {
 
@@ -49,6 +52,28 @@ public class UsersPage extends BasePage {
 
     // date arrow (next)
     // (//i[@class='fa fa-angle-right'])[3]
+    @FindBy(xpath = "//select[@name='tbl_users_length']")
+    public WebElement showRecords;
+
+    @FindBy(xpath = "//tbody/tr")
+    public List<WebElement> records;
+
+    @FindBy(xpath = "//div[@id='tbl_users_filter']//input")
+    public WebElement txt_search;
+
+    @FindBy(xpath = "//td[3]")
+    public List<WebElement> fullName;
+
+    @FindBy(xpath = "//tr/th")
+    public List<WebElement> userInfoRow;
+
+
+    public void showRecords(String records){
+        WebElement element = Driver.getDriver().findElement(By.xpath("//select[@name='tbl_users_length']"));
+        Select select = new Select(element);
+        select.selectByVisibleText(records);
+
+    }
 
 
     public void dayOfMonth(String day){

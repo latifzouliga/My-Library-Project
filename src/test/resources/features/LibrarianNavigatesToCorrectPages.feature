@@ -40,7 +40,7 @@ Feature: Navigate to correct pages
       | Books          |
       | Borrowed Books |
 
-
+@wip
   Scenario Outline: Librarian navigates back to login page
     Given Librarian is on any "<page>"
     When Librarian clicks log out

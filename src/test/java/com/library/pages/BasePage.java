@@ -22,6 +22,9 @@ public abstract class BasePage {
     @FindBy(xpath = "//span[contains(.,'Librarian')]")
     public WebElement btn_accountName;
 
+    @FindBy(css = "#navbarDropdown> span")
+    public WebElement btn_accountHolderName;
+
     @FindBy(xpath = "//a[.='Log Out']")
     public WebElement btn_logout;
 
